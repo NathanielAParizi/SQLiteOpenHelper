@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">RoomKotlinDemo</string>
+
+
+    <string name="selected_item">Selected item:</string>
+
+    <string-array name="employee_array">
+        <item>Nathan</item>
+        <item>Glynis</item>
+        <item>Kyung</item>
+        <item>Andrew</item>
+        <item>CJ</item>
+        <item>Eric</item>
+        <item>Craig</item>
+    </string-array>
+
+</resources>
