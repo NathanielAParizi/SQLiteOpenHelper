@@ -23,20 +23,20 @@ class EmployeeDatabaseHelper(context: Context) :
     }
 
 
-    fun insertPersonIntoDatabase(person: Employee) {
+    fun insertPersonIntoDatabase(employee: Employee) {
 
         val database = writableDatabase
         val contentValues = ContentValues()
 
-        contentValues.put(COLUMN_FIRSTNAME, person.firstName)
-        contentValues.put(COLUMN_LASTNAME, person.lastName)
-        contentValues.put(COLUMN_ADDRESS, person.address)
-        contentValues.put(COLUMN_CITY, person.city)
-        contentValues.put(COLUMN_STATE, person.state)
-        contentValues.put(COLUMN_ZIP, person.zip)
-        contentValues.put(COLUMN_TAXID, person.taxID)
-        contentValues.put(COLUMN_POSITION, person.position)
-        contentValues.put(COLUMN_DEPARTMENT, person.department)
+        contentValues.put(COLUMN_FIRSTNAME, employee.firstName)
+        contentValues.put(COLUMN_LASTNAME, employee.lastName)
+        contentValues.put(COLUMN_ADDRESS, employee.address)
+        contentValues.put(COLUMN_CITY, employee.city)
+        contentValues.put(COLUMN_STATE, employee.state)
+        contentValues.put(COLUMN_ZIP, employee.zip)
+        contentValues.put(COLUMN_TAXID, employee.taxID)
+        contentValues.put(COLUMN_POSITION, employee.position)
+        contentValues.put(COLUMN_DEPARTMENT, employee.department)
 
         database.insert(TABLE_NAME, null, contentValues)
         database.close()
@@ -134,10 +134,10 @@ class EmployeeDatabaseHelper(context: Context) :
         contentValues.put(COLUMN_STATE, person.state)
         contentValues.put(COLUMN_ZIP, person.zip)
         contentValues.put(COLUMN_TAXID, person.taxID)
-        contentValues.put(COLUMN_POSITION, person.taxID)
+        contentValues.put(COLUMN_POSITION, person.position)
         contentValues.put(COLUMN_DEPARTMENT, person.department)
 
-        database.update(TABLE_NAME, contentValues, "$COLUMN_TAXID = '?'", arrayOf(person.taxID))
+        database.update(TABLE_NAME, contentValues, "$COLUMN_TAXID = ", arrayOf(person.taxID))
         database.close()
 
     }
@@ -145,7 +145,7 @@ class EmployeeDatabaseHelper(context: Context) :
     fun removePersonFromDatabase(taxID: String) {
 
         val database = writableDatabase
-        database.delete(TABLE_NAME, "$COLUMN_FIRSTNAME = '?'", arrayOf(taxID))
+        database.delete(TABLE_NAME, "$COLUMN_TAXID = ?", arrayOf(taxID))
         database.close()
 
     }

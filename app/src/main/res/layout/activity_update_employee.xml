@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateEmployee">
+
+    <EditText
+        android:id="@+id/etPosition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loadBtn"
+        android:layout_marginTop="100dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Update Employee's Position" />
+
+    <EditText
+        android:id="@+id/etAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etPosition"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Update Employee's Address" />
+
+    <Button
+        android:id="@+id/loadBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etUpdate"
+        android:onClick="onClick"
+        android:text="Load Employee by Tax ID" />
+
+    <TextView
+        android:id="@+id/employeeStatus"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:text="Employee Details" />
+
+    <EditText
+        android:id="@+id/etUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/employeeStatus"
+
+        android:ems="10"
+        android:hint="@string/taxid"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/updateBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etAddress"
+        android:layout_marginTop="39dp"
+        android:onClick="onClick"
+        android:text="UPDATE" />
+
+
+</RelativeLayout>

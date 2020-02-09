@@ -3,6 +3,18 @@
 
 
     <string name="selected_item">Selected item:</string>
+    <string name="save_employee">Save Employee</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
+    <string name="street_address">Street Address</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="zip">Zip</string>
+    <string name="taxid">taxID</string>
+    <string name="position">Position</string>
+    <string name="department">Department</string>
+    <string name="delete">Delete</string>
+    <string name="delete_employee">Delete Employee</string>
 
     <string-array name="employee_array">
         <item>Nathan</item>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddEmployee">
+
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="@string/save_employee" />
+
+
+    <EditText
+        android:id="@+id/etfirst_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/save"
+        android:ems="10"
+        android:hint="@string/first_name"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etlast_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etfirst_name"
+        android:ems="10"
+        android:hint="@string/last_name"
+        android:inputType="textPersonName" />
+
+
+    <EditText
+        android:id="@+id/etaddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etlast_name"
+        android:ems="10"
+        android:hint="@string/street_address"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etaddress"
+        android:ems="10"
+        android:hint="@string/city"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etState"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etCity"
+        android:ems="10"
+        android:hint="@string/state"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etZip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etState"
+        android:ems="10"
+        android:hint="@string/zip"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/ettaxID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etZip"
+        android:ems="10"
+        android:hint="@string/taxid"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etposition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ettaxID"
+        android:ems="10"
+        android:hint="@string/position"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etdepartment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etposition"
+        android:ems="10"
+        android:hint="@string/department"
+        android:inputType="textPersonName" />
+
+
+</RelativeLayout>

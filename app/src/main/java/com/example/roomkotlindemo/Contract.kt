@@ -27,15 +27,15 @@ const val COLUMN_POSITION = "position"
 const val COLUMN_DEPARTMENT = "department"
 
 
-const val CREATE_PERSON_TABLE = "{" +
-        " CREATE TABLE $TABLE_NAME + {" +
+const val CREATE_PERSON_TABLE =
+        " CREATE TABLE $TABLE_NAME (" +
         "$COLUMN_FIRSTNAME String," +
         "$COLUMN_LASTNAME String," +
         "$COLUMN_ADDRESS String, " +
         "$COLUMN_CITY String," +
         "$COLUMN_STATE String," +
         "$COLUMN_ZIP String," +
-        "$COLUMN_TAXID String PRIMARY_KEY" +
+        "$COLUMN_TAXID String PRIMARY_KEY," +
         "$COLUMN_POSITION String," +
         "$COLUMN_DEPARTMENT String" +
-        "}"
+        ")"

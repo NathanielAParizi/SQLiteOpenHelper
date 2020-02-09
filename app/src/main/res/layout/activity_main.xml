@@ -7,10 +7,34 @@
     tools:context=".MainActivity">
 
 
+    <Button
+        android:id="@+id/updateActivityBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/deleteActivity"
+        android:onClick="onClick"
+        android:text="UPDATE EMPLOYEE" />
+
+    <Button
+        android:id="@+id/saveActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtView"
+        android:onClick="onClick"
+        android:text="@string/save_employee" />
+    <Button
+        android:id="@+id/deleteActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/saveActivity"
+        android:onClick="onClick"
+        android:text="@string/delete_employee" />
+
     <TextView
         android:id="@+id/txtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:text="Select language:"
         android:textSize = "20dp" />
 
@@ -20,4 +44,6 @@
         android:layout_height="50dp"
         android:layout_below="@id/txtView"
         />
+
+
 </RelativeLayout>
