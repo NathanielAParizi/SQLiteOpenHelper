@@ -14,7 +14,6 @@ class EmployeeDetailsActivity : AppCompatActivity(), AdapterView.OnItemSelectedL
 
     val db by lazy { EmployeeDatabaseHelper(this) }
 
-    var employeeList = ArrayList<Employee>()
     var sb = StringBuilder()
     var departmentItem = ""
 

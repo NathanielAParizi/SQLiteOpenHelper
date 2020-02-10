@@ -40,12 +40,12 @@ class MainActivity : AppCompatActivity() {
         var emp2 = Employee(
             "CJ", "Johnson", "123 Blvd", "HR",
             "Indiana", "29282",
-            "2358774", "Android Developer", "Tech"
+            "2358774", "Android Developer", "IT"
         )
         var emp3 = Employee(
             "Gylnis", "Burton", "123 Krunk", "New York",
             "NY", "98228",
-            "985189", "Android Developer", "HR"
+            "985189", "Android Developer", "IT"
         )
         var emp4 = Employee(
             "Kyung", "Pak", "123 Vegan Bike Hipster Ave", "Portland",
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
         var emp5 = Employee(
             "Andrew", "Millsap", "123 Cool St", "New York",
             "NY", "999222",
-            "3333999", "Android Developer", "IT"
+            "3333999", "Android Developer", "Management"
         )
         var emp6 = Employee(
             "Eric", "Van Brunson", "123 The Boi Aint Right Ct.", "Austin",
@@ -82,7 +82,7 @@ class MainActivity : AppCompatActivity() {
         employees.add(emp7)
         employees.add(emp8)
 
-        for (i in 0..7) {
+        for (i in 0..employees.size-1) {
             db.insertPersonIntoDatabase(employees.get(i))
         }
         var qq = db.getOnePersonFromDatabase("000999")
