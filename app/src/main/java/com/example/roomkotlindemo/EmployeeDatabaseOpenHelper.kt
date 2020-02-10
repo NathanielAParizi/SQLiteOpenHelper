@@ -80,6 +80,49 @@ class EmployeeDatabaseHelper(context: Context) :
 
     }
 
+    fun getAllPersonFromSameDepartment(department: String): ArrayList<Employee> {
+
+        val database = readableDatabase
+        var personList: ArrayList<Employee> = ArrayList<Employee>()
+        var employee: Employee? = null
+
+
+        val cursor = database.rawQuery(
+            "SELECT * FROM $TABLE_NAME WHERE $COLUMN_DEPARTMENT =  '$department'", null
+        )
+
+        if (cursor.moveToFirst()) {
+
+
+            do {
+                val firstName = cursor.getString(cursor.getColumnIndex(COLUMN_FIRSTNAME))
+                val lastName = cursor.getString(cursor.getColumnIndex(COLUMN_LASTNAME))
+                val address = cursor.getString(cursor.getColumnIndex(COLUMN_ADDRESS))
+                val city = cursor.getString(cursor.getColumnIndex(COLUMN_CITY))
+                val state = cursor.getString(cursor.getColumnIndex(COLUMN_STATE))
+                val zip = cursor.getString(cursor.getColumnIndex(COLUMN_ZIP))
+                val taxID = cursor.getString(cursor.getColumnIndex(COLUMN_TAXID))
+                val position = cursor.getString(cursor.getColumnIndex(COLUMN_POSITION))
+                val department = cursor.getString(cursor.getColumnIndex(COLUMN_DEPARTMENT))
+
+                val person = Employee(
+                    firstName, lastName, address, city, state, zip, taxID, position
+                    , department
+                )
+                personList.add(person)
+
+            } while (cursor.moveToNext())
+
+        }
+
+        cursor.close()
+        database.close()
+        return personList
+
+
+
+    }
+
     fun getAllPeopleFromDatabase(): ArrayList<Employee> {
 
         val database = readableDatabase
@@ -137,7 +180,9 @@ class EmployeeDatabaseHelper(context: Context) :
         contentValues.put(COLUMN_POSITION, person.position)
         contentValues.put(COLUMN_DEPARTMENT, person.department)
 
-        database.update(TABLE_NAME, contentValues, "$COLUMN_TAXID = ", arrayOf(person.taxID))
+        database.update(TABLE_NAME, contentValues, "$COLUMN_TAXID = ?", arrayOf(person.taxID))
+
+
         database.close()
 
     }

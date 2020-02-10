@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.view.*
 
-class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
+class MainActivity : AppCompatActivity() {
 
 
     val db by lazy { EmployeeDatabaseHelper(this) }
@@ -24,6 +24,13 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        loadSomeData()
+
+
+
+    }
+
+    private fun loadSomeData() {
 
         var emp1 = Employee(
             "Nathan", "Parizi", "123 Street", "Columbia",
@@ -78,40 +85,12 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         for (i in 0..7) {
             db.insertPersonIntoDatabase(employees.get(i))
         }
-
         var qq = db.getOnePersonFromDatabase("000999")
-
-        Log.v("TAG", "Bad boi at " + db.getOnePersonFromDatabase("44444").toString())
-        Log.v("GOLD", "ALL PEOPLE:" + db.getAllPeopleFromDatabase().toString())
-        //  Log.v("TAG",db.getOnePersonFromDatabase("2408241").toString())
         db.removePersonFromDatabase("44444")
-        Log.v("GOLD", "ALL PEOPLE:" + db.getAllPeopleFromDatabase().toString())
 
-
-        val spinner: Spinner = findViewById(R.id.spinner)
-        ArrayAdapter.createFromResource(
-            this,
-            R.array.employee_array,
-            android.R.layout.simple_spinner_item
-        ).also { adapter ->
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            spinner.adapter = adapter
-        }
-
-        spinner.onItemSelectedListener = this
 
     }
 
-
-    override fun onNothingSelected(parent: AdapterView<*>?) {
-
-    }
-
-    override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-
-        Log.v("TAG", spinner.selectedItem.toString())
-
-    }
 
     fun onClick(view: View) {
 
@@ -127,6 +106,10 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             }
             R.id.updateActivityBtn -> {
                 intent = Intent(this, UpdateEmployee::class.java)
+                startActivity(intent)
+            }
+            R.id.detailsActivityBtn -> {
+                intent = Intent(this, EmployeeDetailsActivity::class.java)
                 startActivity(intent)
             }
 

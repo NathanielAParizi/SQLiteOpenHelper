@@ -15,15 +15,14 @@
     <string name="department">Department</string>
     <string name="delete">Delete</string>
     <string name="delete_employee">Delete Employee</string>
+    <string name="load_details">Load Details</string>
+    <string name="enter_employee_tax_id">Enter Employee Tax ID</string>
+    <string name="employee_details">Employee Details</string>
 
     <string-array name="employee_array">
-        <item>Nathan</item>
-        <item>Glynis</item>
-        <item>Kyung</item>
-        <item>Andrew</item>
-        <item>CJ</item>
-        <item>Eric</item>
-        <item>Craig</item>
+        <item>IT</item>
+        <item>Finance</item>
+        <item>Management</item>
     </string-array>
 
 </resources>

@@ -35,6 +35,7 @@ class UpdateEmployee : AppCompatActivity() {
                 var city = emp?.city
                 var state = emp?.state
                 var zip = emp?.zip
+
                 var position = emp?.position
                 var department = emp?.department
 
@@ -44,6 +45,7 @@ class UpdateEmployee : AppCompatActivity() {
                         " $city\n" +
                         " $state\n" +
                         " $zip\n" +
+                        " $taxID\n" +
                         " $position\n" +
                         " $department"
 
@@ -58,9 +60,9 @@ class UpdateEmployee : AppCompatActivity() {
                 if (emp != null) {
 
 
-
-
-
+                    emp.address = etAddress.text.toString()
+                    emp.position = etPosition.text.toString()
+                    
                     db.updatePersonInDatabase(emp)
 
                 } else {
