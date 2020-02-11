@@ -1,6 +1,6 @@
 # RoomKotlinDemo
 
-This is a demonstration of both SQLite Open Helper and Room.
+This is a demonstration of SQLiteOpenHelper.
 
 ************************
 
